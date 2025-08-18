@@ -10,3 +10,7 @@
 /.github/workflows/ @platform-team @devops-team
 /terraform/ @platform-team @devops-team
 /kubernetes/ @platform-team @devops-team
+
+# Documentation
+/docs/ @tech-writers @product-team
+README.md @tech-writers
