@@ -1,0 +1,12 @@
+# Global owners
+* @senior-devs @platform-team
+
+# Security-sensitive files
+/.github/ @security-team @platform-team
+/src/auth/ @security-team
+/src/customer-service.ts @senior-devs @security-team
+
+# Infrastructure and CI/CD
+/.github/workflows/ @platform-team @devops-team
+/terraform/ @platform-team @devops-team
+/kubernetes/ @platform-team @devops-team
