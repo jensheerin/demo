@@ -1,5 +1,5 @@
 {
-  "name": "customer-api-demo",
+  "name": "demo",
   "version": "1.0.0",
   "description": "Demo customer API service for GitHub Enterprise Platform showcase",
   "main": "dist/index.js",
