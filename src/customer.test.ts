@@ -54,15 +54,15 @@ describe('Customer API', () => {
 
   it('should limit requests per IP (rate limiting)', async () => {
     // Send 101 requests to trigger rate limit
-    let lastRes: any;
+    let lastRes: request.Response;
     for (let i = 0; i < 101; i++) {
       lastRes = await request(app)
         .post('/api/customers')
         .send(getValidCustomer());
     }
-    expect(lastRes).toBeDefined();
-    expect(lastRes.status).toBe(429);
-    expect(lastRes.body).toEqual({ message: 'Too many requests from this IP' });
+    expect(lastRes!).toBeDefined();
+    expect(lastRes!.status).toBe(429);
+    expect(lastRes!.body).toEqual({ message: 'Too many requests from this IP' });
   });
 
   it('should handle server errors gracefully', async () => {
@@ -72,7 +72,7 @@ describe('Customer API', () => {
     errorApp.post('/api/customers', (req, res) => {
       throw new Error('Test error');
     });
-    errorApp.use((err: any, req: Request, res: Response, next: NextFunction) => {
+    errorApp.use((err: Error, req: Request, res: Response, next: NextFunction) => {
       res.status(500).json({ error: 'Something went wrong!' });
     });
     const res = await request(errorApp)

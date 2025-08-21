@@ -13,7 +13,7 @@ export interface CustomerData {
  * @param data The customer data to validate
  * @returns Array of validation error messages, empty if valid
  */
-export const validateCustomerData = (data: any): string[] => {
+export const validateCustomerData = (data: CustomerData): string[] => {
   const errors: string[] = [];
   
   if (!data.name || typeof data.name !== 'string' || data.name.trim().length === 0) {
