@@ -14,3 +14,9 @@
 # Documentation
 /docs/ @tech-writers @product-team
 README.md @tech-writers
+
+# Configuration files
+package.json @platform-team
+tsconfig.json @platform-team
+jest.config.js @platform-team
+.eslintrc.json @platform-team
