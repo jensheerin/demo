@@ -64,7 +64,7 @@ app.get('/health', (req: Request, res: Response): Response => {
 });
 
 // Error handling middleware
-app.use((err: Error, req: Request, res: Response, next: NextFunction): void => {
+app.use((err: Error, req: Request, res: Response, _next: NextFunction): void => {
   console.error(`[${new Date().toISOString()}] Error:`, err.stack);
   res.status(500).json({ error: 'Something went wrong!' });
 });

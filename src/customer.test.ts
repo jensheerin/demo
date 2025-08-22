@@ -4,7 +4,7 @@ import app from './customer-service';
 
 describe('Customer API', () => {
   // Helper to clone customer data
-  const getValidCustomer = () => ({
+  const getValidCustomer = (): { name: string; email: string; age: number } => ({
     name: 'John Doe',
     email: 'john@example.com',
     age: 30
@@ -69,10 +69,10 @@ describe('Customer API', () => {
     // Patch app to throw error for this test
     const errorApp = express();
     errorApp.use(express.json());
-    errorApp.post('/api/customers', (req, res) => {
+    errorApp.post('/api/customers', () => {
       throw new Error('Test error');
     });
-    errorApp.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+    errorApp.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
       res.status(500).json({ error: 'Something went wrong!' });
     });
     const res = await request(errorApp)
