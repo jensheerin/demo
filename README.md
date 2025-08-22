@@ -14,31 +14,37 @@ This is a demo customer API service for GitHub Enterprise Platform showcase.
 ## Getting Started
 
 1. Install dependencies:
+
    ```bash
    npm install
    ```
 
 2. Run tests:
+
    ```bash
    npm test
    ```
 
 3. Run with coverage:
+
    ```bash
    npm run test:coverage
    ```
 
 4. Lint code:
+
    ```bash
    npm run lint
    ```
 
 5. Build for production:
+
    ```bash
    npm run build
    ```
 
 6. Start the server:
+
    ```bash
    npm start
    ```
@@ -50,6 +56,7 @@ This is a demo customer API service for GitHub Enterprise Platform showcase.
 Creates a new customer with validation and Unicode normalization.
 
 **Request Body:**
+
 ```json
 {
   "name": "John Doe",
@@ -59,6 +66,7 @@ Creates a new customer with validation and Unicode normalization.
 ```
 
 **Response:**
+
 ```json
 {
   "message": "Customer created successfully",
@@ -81,6 +89,7 @@ Creates a new customer with validation and Unicode normalization.
 ## Development
 
 This project uses:
+
 - TypeScript for type safety
 - ESLint for code quality
 - Jest for testing
